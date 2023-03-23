@@ -1,0 +1,38 @@
+.navbar-light{
+  height: fit-content;
+}
+
+.btnImg {
+  border-style: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.SumOfMoney{
+  font-size: 11px;
+}
+
+.SumOfMoney:hover{
+  cursor:no;
+  text-decoration: underline;
+}
+
+.mat-badge-medium.mat-badge-above .mat-badge-content {
+  left: 60%;
+}
+
+.btn-dropdown{
+  background-color: transparent;
+  outline: none !important;
+}
+
+.dropdown-menu{
+  outline: none;
+}
+
+.row {
+  display: table;
+}
+
+

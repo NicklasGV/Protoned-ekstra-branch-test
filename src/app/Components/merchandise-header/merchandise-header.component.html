@@ -1,0 +1,54 @@
+<!--Filter TEST-->
+<form class="d-flex justify-content-around border-bottom  p-3 mb-2 bg-white">
+  <!--Test filter items-->
+  <div class="card mb-3 justify-content-between " style="width: 25rem;">
+    <div class="dropdown">
+      <button class="btn-dropdown- btn dropdown-toggle  mt-1" style="font-size: 1rem;" type="button"
+        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="bi bi-filter-square-fill"></i>
+        Sort by {{sort}}
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" (click)="onSortUpdated('Higest Price')">Higest Price</a>
+          <a class="dropdown-item" (click)="onSortUpdated('Lowest Price')">Lowest Price</a>
+          <a class="dropdown-item" (click)="onSortUpdated('Most Popular')">Most Popular</a>
+        </div>
+      </button>
+      <div class="dropdown d-flex float-left">
+        <div class="dropdown mt-1">
+          <button class="btn-dropdown btn dropdown-toggle" style="font-size: 1rem;" type="button"
+            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Show {{itemShowCount}}
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" (click)="onItemsUpdated(12)">12</a>
+              <a class="dropdown-item" (click)="onItemsUpdated(24)">24</a>
+              <a class="dropdown-item" (click)="onItemsUpdated(36)">36</a>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div class="float-right mt-2 mr-2">
+        <button>
+          <mat-icon>view_module</mat-icon>
+        </button>
+        <button>
+          <mat-icon>view_list</mat-icon>
+        </button>
+        <button>
+          <mat-icon>view_comfy</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  <!--Basket Test-->
+  <form class="d-flex justify-content-sticky mx-5 mt-2">
+    <button [routerLink]="['/cart']" routerLinkActive="router-link-active" class="btnImg ">
+      <div [matBadge]="itemsQuantity" [matBadgeHidden]="!itemsQuantity" matBadgeOverlap="true" matBadgeColor="warn"
+        class="bagde"></div>
+      <i class="bi bi-basket  me-3" style="font-size: 1.5rem;"></i>
+      <p class="SumOfMoney fw-medium">{{ getTotal(cart.items) | currency:'DKK ' }}</p>
+    </button>
+  </form>
+</form>
+
+
+
